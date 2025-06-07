@@ -1,9 +1,17 @@
 {
-    "rewrites": [
-      {
-        "source": "/api/(.*)",
-        "destination": "https://your-flask-backend.com/api/$1"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "name": "agridron-frontend",
+  "public": "frontend",
+  "builds": [
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ]
+}
