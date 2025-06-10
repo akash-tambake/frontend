@@ -736,6 +736,20 @@ img {
     width: 265px;
   }
 
+  #video {
+    width: 100%;
+    height: auto;
+  }
+
+  .travel__container {
+    padding: 1rem;
+  }
+
+  #startBtn, #stopBtn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
 }
 
 @media screen and (min-width: 768px){
@@ -1002,7 +1016,17 @@ img {
 
 
 
-/* For large devices */
+#video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+  background-color: #000; /* fallback to show a black area before camera activates */
+  object-fit: cover;
+  z-index: 2;
+}
 
 
 
