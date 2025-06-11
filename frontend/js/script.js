@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
 
-                fetch(`${BACKEND_BASE_URL}/capture`, {
+                fetch(`${BACKEND_BASE_URL}?fullpath=/capture`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ image: imageData, latitude, longitude })
