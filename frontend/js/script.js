@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const BACKEND_BASE_URL = "https://xb1kvn4ao8.execute-api.eu-north-1.amazonaws.com/default/Proxy?fullpath=/start_capture"; // Replace with your actual backend URL
+    const BACKEND_BASE_URL = "https://xb1kvn4ao8.execute-api.eu-north-1.amazonaws.com/default/Proxy"; // Replace with your actual backend URL
 
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stopBtn.disabled = false;
         capturing = true;
 
-        fetch(`${BACKEND_BASE_URL}/start_capture`, { method: 'POST' })
+        fetch(`${BACKEND_BASE_URL}?fullpath=/start_capture`, { method: 'POST' })
             .then(response => response.json())
             .then(data => console.log('Start capture response:', data))
             .catch(err => console.error('Error starting capture:', err));
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         capturing = false;
         clearInterval(intervalId);
 
-        fetch(`${BACKEND_BASE_URL}/stop_capture`, { method: 'POST' })
+        fetch(`${BACKEND_BASE_URL}?fullpath=/stop_capture`, { method: 'POST' })
             .then(response => response.json())
             .then(data => displayResults(data.results, data.insights))
             .catch(err => console.error('Error stopping capture:', err));
