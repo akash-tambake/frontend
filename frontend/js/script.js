@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const BACKEND_BASE_URL = "http://13.60.60.78:5000"; // Replace with your actual backend URL
+    const BACKEND_BASE_URL = "https://xb1kvn4ao8.execute-api.eu-north-1.amazonaws.com/default/Proxy"; // Replace with your actual backend URL
 
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
