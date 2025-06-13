@@ -19,43 +19,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
+    // navigator.mediaDevices.getUserMedia({ video: true })
+    //     .then(stream => {
+    //         video.srcObject = stream;
 
-            setTimeout(() => {
-                map = L.map("map").setView([15.3173, 75.7139], 6);
-                L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                    attribution: "© OpenStreetMap contributors",
-                }).addTo(map);
-                markerLayer = L.layerGroup().addTo(map);
-                regionLayer = L.layerGroup().addTo(map);
-            }, 1000);
-        })
-        .catch(err => {
-            console.error("Error accessing camera:", err);
-            alert("Unable to access the camera. Please check permissions.");
-        });
+    //         setTimeout(() => {
+    //             map = L.map("map").setView([15.3173, 75.7139], 6);
+    //             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    //                 attribution: "© OpenStreetMap contributors",
+    //             }).addTo(map);
+    //             markerLayer = L.layerGroup().addTo(map);
+    //             regionLayer = L.layerGroup().addTo(map);
+    //         }, 1000);
+    //     })
+    //     .catch(err => {
+    //         console.error("Error accessing camera:", err);
+    //         alert("Unable to access the camera. Please check permissions.");
+    //     });
 
-    // navigator.mediaDevices.getUserMedia({
-    // video: { facingMode: { exact: "environment" } }
-    // })
-    // .then(stream => {
-    //     video.srcObject = stream;
+    navigator.mediaDevices.getUserMedia({
+    video: { facingMode: { exact: "environment" } }
+    })
+    .then(stream => {
+        video.srcObject = stream;
     
-    //     setTimeout(() => {
-    //         map = L.map("map").setView([15.3173, 75.7139], 6);
-    //         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    //             attribution: "© OpenStreetMap contributors",
-    //         }).addTo(map);
-    //         markerLayer = L.layerGroup().addTo(map);
-    //         regionLayer = L.layerGroup().addTo(map);
-    //     }, 1000);
-    // })
-    // .catch(err => {
-    //     console.error("Error accessing camera:", err);
-    //     alert("Unable to access the camera. Please check permissions.");
-    // });
+        setTimeout(() => {
+            map = L.map("map").setView([15.3173, 75.7139], 6);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "© OpenStreetMap contributors",
+            }).addTo(map);
+            markerLayer = L.layerGroup().addTo(map);
+            regionLayer = L.layerGroup().addTo(map);
+        }, 1000);
+    })
+    .catch(err => {
+        console.error("Error accessing camera:", err);
+        alert("Unable to access the camera. Please check permissions.");
+    });
 
 
     startBtn.addEventListener('click', () => {
